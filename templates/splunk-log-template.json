@@ -1,0 +1,57 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Splunk Search Log",
+	"behavior": "create",
+	"noteContentFormat": "---\n# {{title}}\n\n**Source:** [{{url}}]({{url}})\n\n## 🖥 Splunk Query\n```spl\n{{selectorHtml:.search-query|text}}\n```\n\n## 🔍 Search Results\n- **Job ID**: {{selectorHtml:.job-id|text}}\n- **Execution Time**: {{selectorHtml:.exec-time|text}}\n- **Results Count**: {{selectorHtml:.result-count|text}}\n\n## 📑 Notes\n{{description}}\n",
+  
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "source",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "query",
+			"value": "{{selectorHtml:.search-query|text}}",
+			"type": "text"
+		},
+		{
+			"name": "job_id",
+			"value": "{{selectorHtml:.job-id|text}}",
+			"type": "text"
+		},
+		{
+			"name": "execution_time",
+			"value": "{{selectorHtml:.exec-time|text}}",
+			"type": "text"
+		},
+		{
+			"name": "result_count",
+			"value": "{{selectorHtml:.result-count|text}}",
+			"type": "number"
+		},
+		{
+			"name": "tags",
+			"value": "splunk, logs, siem, security",
+			"type": "multitext"
+		},
+		{
+			"name": "created",
+			"value": "{{date}}",
+			"type": "date"
+		}
+	],
+
+	"triggers": [
+		"https://splunk.com/",
+		"https://your-splunk-instance.com/"
+	],
+
+	"noteNameFormat": "{{time|date:\"YYYY-MM-DD\"}} - Splunk - {{selectorHtml:.search-query|text}}",
+	"path": "clippings/splunk"
+}
