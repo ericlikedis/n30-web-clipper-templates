@@ -49,7 +49,8 @@
 
 	"triggers": [
 		"https://splunk.com/",
-		"https://your-splunk-instance.com/"
+		"https://your-splunk-instance.com/",
+        "https://gettingstarted.splunk.show" // for testing purposes
 	],
 
 	"noteNameFormat": "{{time|date:\"YYYY-MM-DD\"}} - Splunk - {{selectorHtml:.search-query|text}}",
