@@ -3,7 +3,10 @@
 	"name": "Splunk Search Log",
 	"behavior": "create",
 	"noteContentFormat": "---\n# {{title}}\n\n**Source:** [{{url}}]({{url}})\n\n## 🖥 Splunk Query\n```spl\n{{selectorHtml:.search-query|text}}\n```\n\n## 🔍 Search Results\n- **Job ID**: {{selectorHtml:.job-id|text}}\n- **Execution Time**: {{selectorHtml:.exec-time|text}}\n- **Results Count**: {{selectorHtml:.result-count|text}}\n\n## 📑 Notes\n{{description}}\n",
-  
+  // known issues(WIP)
+  // - spl not being extracted correctly
+  // - title could use some work, maybe just extracting it as "Date/Time - Splunk {{version}}" excuse the crap pseudo code. 
+
 	"properties": [
 		{
 			"name": "title",
